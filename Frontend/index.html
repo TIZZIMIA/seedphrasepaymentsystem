@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crypto Seed Generator</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <!-- Dark/Light Mode Toggle Button -->
+  <button id="themeToggle">🌙 Switch Theme</button>
+
+  <div class="container">
+    <h1>Secure Your Crypto with a Unique Seed Phrase</h1>
+    <p>Pay $5 in crypto to generate a 12, 18, or 24-word seed phrase.</p>
+
+    <!-- User Input -->
+    <label for="wallet">Enter Your Wallet Address:</label>
+    <input type="text" id="wallet" placeholder="0xYourWalletAddress" />
+
+    <label for="seedLength">Select Seed Length:</label>
+    <select id="seedLength">
+      <option value="12">12 Words</option>
+      <option value="18">18 Words</option>
+      <option value="24">24 Words</option>
+    </select>
+
+    <!-- Payment Buttons -->
+    <button onclick="startPayment()">Pay with Crypto</button>
+    <p id="status"></p>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <button id="checkPaymentBtn" onclick="checkPayment()">Check Payment Status</button>
+    <button id="generateSeed" disabled onclick="generateSeedPhrase()">Generate Seed Phrase</button>
+
+    <!-- Display Generated Seed Phrase -->
+    <p id="seedPhrase"></p>
+  </div>
+
+  <!-- Audio for Notifications -->
+  <audio id="successSound" src="sounds/success.mp3"></audio>
+  <audio id="errorSound" src="sounds/error.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

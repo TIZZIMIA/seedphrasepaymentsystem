@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payments Dashboard</title>
+</head>
+<body>
+    <h2>Payment Transactions</h2>
+    <form method="GET" action="/dashboard">
+        <input type="date" name="date">
+        <select name="status">
+            <option value="">All</option>
+            <option value="pending">Pending</option>
+            <option value="confirmed">Confirmed</option>
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+    <table border="1">
+        <tr>
+            <th>Wallet Address</th>
+            <th>Amount</th>
+            <th>Transaction ID</th>
+            <th>Status</th>
+            <th>Created At</th>
+        </tr>
+        {% for payment in payments %}
+        <tr>
+            <td>{{ payment[0] }}</td>
+            <td>{{ payment[1] }}</td>
+            <td>{{ payment[2] }}</td>
+            <td>{{ payment[3] }}</td>
+            <td>{{ payment[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/export-payments">Download CSV</a> |
+    <a href="/send-csv-email">Email CSV Report</a> |
+    <a href="/admin-panel">Admin Panel</a> |
+    <a href="/logout">Logout</a>
+</body>
+</html>

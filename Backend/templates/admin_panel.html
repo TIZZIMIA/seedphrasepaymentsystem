@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Management</title>
+</head>
+<body>
+    <h2>Admin Management</h2>
+    
+    <h3>Add New Admin</h3>
+    <form method="POST" action="/add-admin">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Add Admin</button>
+    </form>
+
+    <h3>Existing Admins</h3>
+    <table border="1">
+        <tr>
+            <th>Username</th>
+            <th>Actions</th>
+        </tr>
+        {% for admin in admins %}
+        <tr>
+            <td>{{ admin[0] }}</td>
+            <td>
+                <form method="POST" action="/remove-admin">
+                    <input type="hidden" name="username" value="{{ admin[0] }}">
+                    <button type="submit">Remove</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/dashboard">Back to Dashboard</a>
+</body>
+</html>
