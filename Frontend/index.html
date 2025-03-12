@@ -1,40 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crypto Seed Generator</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seed Phrase Generator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <button id="themeToggle">🌙 Switch Theme</button>
-  <div class="container">
-    <h1>Generate a Secure Crypto Seed Phrase</h1>
-    <p>Pay $5 in crypto to generate a 12, 18, or 24-word seed phrase.</p>
+    <h1>Secret Phrase Generator</h1>
+    
+    <label for="walletAddress">Enter Wallet Address:</label>
+    <input type="text" id="walletAddress" placeholder="Your wallet address">
+    <button id="checkPayment">Check Payment</button>
+    <p id="paymentStatus"></p>
 
-    <label for="wallet">Enter Wallet Address:</label>
-    <input type="text" id="wallet" placeholder="0xYourWalletAddress" />
-
-    <label for="seedLength">Select Seed Length:</label>
-    <select id="seedLength">
-      <option value="12">12 Words</option>
-      <option value="18">18 Words</option>
-      <option value="24">24 Words</option>
+    <label for="phraseLength">Select Phrase Length:</label>
+    <select id="phraseLength">
+        <option value="12">12 words</option>
+        <option value="18">18 words</option>
+        <option value="24">24 words</option>
     </select>
+    <button id="pay-with-crypto">Pay with Crypto</button>
+    <button id="generateBtn">Generate Seed Phrase</button>
+    
+    <p id="seedPhrase"></p>
 
-    <button onclick="startPayment()">Pay with Crypto</button>
-    <p id="status"></p>
-
-    <div class="progress-container">
-      <div class="progress-bar" id="progressBar"></div>
+    <div id="progressContainer">
+        <div id="progressBar"></div>
     </div>
 
-    <button id="checkPaymentBtn" onclick="checkPayment()">Check Payment Status</button>
-    <button id="generateSeed" disabled onclick="generateSeedPhrase()">Generate Seed Phrase</button>
-
-    <p id="seedPhrase"></p>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
