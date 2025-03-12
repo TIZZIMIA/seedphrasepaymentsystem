@@ -1,4 +1,4 @@
-const backendURL = "https://your-app.onrender.com"; // Replace with your Render backend URL
+const backendURL = "https:postgresql://seedphrase_user:ST3hgMcjpoUdkiByu8TZGCmfvD2WJzbu@dpg-cv8nneq3esus73dh8o60-a.oregon-postgres.render.com/seedphrase"; // Replace with your Render backend URL
 
 document.getElementById("checkPayment").addEventListener("click", async () => {
     const walletAddress = document.getElementById("walletAddress").value;
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const statusMessage = document.getElementById("status-message");
     const seedPhraseDisplay = document.getElementById("seed-phrase");
     
-    const backendUrl = "https://your-render-backend-url.com";
+    const backendUrl = "https:postgresql://seedphrase_user:ST3hgMcjpoUdkiByu8TZGCmfvD2WJzbu@dpg-cv8nneq3esus73dh8o60-a.oregon-postgres.render.com/seedphrase";
     
     function checkPaymentStatus(walletAddress) {
         statusMessage.textContent = "Verifying payment...";
