@@ -1,8 +1,0 @@
-Flask
-psycopg2-binary
-bcrypt
-sendgrid
-twilio
-APScheduler
-Flask-SSLify
-gunicorn
